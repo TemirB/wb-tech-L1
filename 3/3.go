@@ -17,8 +17,8 @@ func main() {
 		return
 	}
 
+	wg.Add(nWorkers)
 	for i := range nWorkers {
-		wg.Add(1)
 		go func(id int) {
 			defer wg.Done()
 			for data := range ch {
