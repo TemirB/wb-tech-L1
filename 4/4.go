@@ -15,11 +15,11 @@ func main() {
 
 	nWorkers := 10
 	var wg sync.WaitGroup
-	wg.Add(nWorkers)
 
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, os.Interrupt, syscall.SIGINT)
 
+	wg.Add(nWorkers)
 	for i := range nWorkers {
 		go work(ctx, &wg, i)
 	}
