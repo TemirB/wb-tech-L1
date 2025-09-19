@@ -19,6 +19,7 @@ func main() {
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, os.Interrupt, syscall.SIGINT)
 
+	// Запуск задач
 	wg.Add(nWorkers)
 	for i := range nWorkers {
 		go work(ctx, &wg, i)
