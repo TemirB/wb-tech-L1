@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ch := make(chan int)
+	ch := make(chan int, 16)
 	var wg sync.WaitGroup
 
 	var nWorkers int
