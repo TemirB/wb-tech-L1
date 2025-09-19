@@ -10,15 +10,22 @@ type Target interface {
 	Operation()
 }
 
-// Реализация интерфеса, в которую встроена адаптируемая структура
+// Реализация интерфеса, приватным полем которой является адаптируемая структура
 type ConcreteAdapter struct {
-	*Adaptee
+	adaptee *Adaptee // private поле
 }
+
+// Гарантия на этапе компиляции
+var _ Target = (*ConcreteAdapter)(nil)
 
 // Метод адаптер, которым подменяем существующий
 func (ca *ConcreteAdapter) Operation() {
-	fmt.Printf("Adapter method called\n")
-	ca.MyOperation()
+	fmt.Println("Adapter method called")
+	if ca.adaptee == nil {
+		fmt.Println("adaptee is nil; skipping")
+		return
+	}
+	ca.adaptee.MyOperation()
 }
 
 // Реальный метод
