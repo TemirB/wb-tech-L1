@@ -65,6 +65,6 @@ func main() {
 	}
 	expected := nWorkers * opsPerWorker
 
+	fmt.Printf("[STATS] len(map)=%d total=%d expected=%d OK=%v\n", sMap.Len(), total, expected, total == expected)
 	fmt.Println(sMap.m)
-	fmt.Printf("len(map)=%d total=%d expected=%d OK=%v\n", sMap.Len(), total, expected, total == expected)
 }
