@@ -10,6 +10,7 @@ import (
 
 func main() {
 	var wg sync.WaitGroup
+
 	// 1) выход по условию
 	wg.Add(1)
 	go func() {
