@@ -19,7 +19,9 @@ func createHugeString(size uint64) string {
 }
 
 func someFunc() {
-	// Создание большой строки на стеке, и выделение только первых 100 символов => не хорошо
+	// justString, будет указывать на созданную v, которая будет лежать на стеке
+	// Её не будет собирать GC, поскольку существует justString
+
 	// v := createHugeString(1 &lt;&lt; 10) 1 << 10?
 	// justString = v[:100]
 	justString = createHugeString(100)
