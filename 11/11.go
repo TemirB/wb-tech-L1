@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func contain(slice []int, target int) bool {
+func Contain(slice []int, target int) bool {
 	for _, v := range slice {
 		if v == target {
 			return true
@@ -16,7 +16,7 @@ func main() {
 
 	result := []int{}
 	for _, t := range B {
-		if contain(A, t) {
+		if Contain(A, t) {
 			result = append(result, t)
 		}
 	}
