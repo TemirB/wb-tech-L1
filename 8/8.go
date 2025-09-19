@@ -58,7 +58,7 @@ func main() {
 	printValue("AFTER", result)
 
 	// Пример работы:
-	// Ввод: 5 1 1 = установить первый бит в числе 5 в значение 1
+	// Ввод: 5 1 1 = установить 1 бит в числе 5 в значение 1
 	//
 	// [BEFORE] decimal: 5      binary: 101
 	// [AFTER]  decimal: 7      binary: 111
