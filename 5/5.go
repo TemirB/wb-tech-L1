@@ -20,7 +20,7 @@ func main() {
 
 	go work(ctx, ch, Producer, i)
 	go work(ctx, ch, Consumer, i)
-	// Ждем конца работы и корректного умирания горутин
+	// Ждем конца работы и корректного завершения горутин
 	time.Sleep(duration + time.Second)
 }
 
